@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f5f8">
+  <title>Calendário de Status</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">ORGANIZAÇÃO PESSOAL</p>
+        <h1>Meu calendário</h1>
+        <p class="subtitle">Marque cada dia com uma das três cores.</p>
+      </div>
+      <div class="today-chip" id="todayLabel">Hoje</div>
+    </header>
+
+    <section class="calendar-card" aria-label="Calendário">
+      <div class="calendar-toolbar">
+        <button class="nav-btn" id="prevMonth" aria-label="Mês anterior">‹</button>
+        <div class="month-heading">
+          <h2 id="monthTitle">Mês</h2>
+          <button id="todayBtn" class="today-btn">Hoje</button>
+        </div>
+        <button class="nav-btn" id="nextMonth" aria-label="Próximo mês">›</button>
+      </div>
+
+      <div class="legend" aria-label="Legenda de status">
+        <span><i class="legend-dot empty-dot"></i>Em aberto</span>
+        <span><i class="legend-dot orange-dot"></i>Laranja</span>
+        <span><i class="legend-dot red-dot"></i>Vermelho</span>
+        <span><i class="legend-dot green-dot"></i>Verde</span>
+      </div>
+
+      <div class="weekdays" aria-hidden="true">
+        <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+      </div>
+      <div id="calendarGrid" class="calendar-grid" aria-live="polite"></div>
+      <p class="hint">Clique em um dia para alternar: vazio → laranja → vermelho → verde → vazio.</p>
+      <div id="message" class="message" role="status"></div>
+    </section>
+
+    <section class="summary" aria-label="Resumo mensal">
+      <div class="summary-item"><span class="summary-dot orange-dot"></span><div><strong id="orangeCount">0</strong><small>Laranja</small></div></div>
+      <div class="summary-item"><span class="summary-dot red-dot"></span><div><strong id="redCount">0</strong><small>Vermelho</small></div></div>
+      <div class="summary-item"><span class="summary-dot green-dot"></span><div><strong id="greenCount">0</strong><small>Verde</small></div></div>
+    </section>
+
+    <footer>Suas marcações são salvas no banco de dados.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
